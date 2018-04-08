@@ -1,0 +1,85 @@
+<!--
+参数：
+year：默认年份
+month:默认月份
+day:默认日期
+header:是否显示主标题
+weeks:是否显示周标题
+week-title-type:周标题类型
+show-more-days:是否显示上下月的日期
+picker:是否启用日期变化
+today:是否启用今日按钮
+actives:[激活的日期]
+
+更多事件函数请参考JS页代码文档
+-->
+<div class="plugin">
+<calendar 
+    year="{{year}}"
+    month="{{month}}" 
+    day="{{day}}" 
+    start-date="2001-10" 
+    end-date="2018-09" 
+    
+    header="{{header}}" 
+    next="{{next}}" 
+    prev="{{prev}}" 
+    
+    weeks="{{week_title}}"
+    weeks-type="{{title_type}}" 
+    show-more-days="{{more}}" 
+    lunar="{{lunar}}"
+
+    cell-size="{{cs}}"    
+    
+    days-color="{{style}}"
+    active-type="{{activeType}}"
+    next-month='hi'
+    
+    bindnextMonth='nextMonth'                
+    bindprevMonth='prevMonth'
+    binddateChange='dateChange' />
+</div>
+<div class="cell" style="margin-top: 30px;">
+    <p class="title">显示日历标题</p>
+    <switch checked="{{header}}" bindchange='switchHeader'></switch>
+</div>
+<div class="cell">
+    <p class="title">显示上个月按钮</p>
+    <switch checked="{{prev}}" bindchange='switchPrev'></switch>
+</div>
+<div class="cell">
+    <p class="title">显示下个月按钮</p>
+    <switch checked="{{next}}" bindchange='switchNext'></switch>
+</div>
+<div class="cell">
+    <p class="title">显示农历</p>
+    <switch checked="{{lunar}}" bindchange='switchLunar'></switch>
+</div>
+<div class="cell">
+    <p class="title">显示非当前月日期</p>
+    <switch checked="{{more}}" bindchange='switchMore'></switch>
+</div>
+<div class="cell">
+    <p class="title">显示周标题</p>
+    <switch checked="{{week_title}}" bindchange='switchTitle'></switch>
+</div>
+<div class="cell">
+    <p class="title">周标题类型</p>
+    <picker range="{{titleType}}" value="{{title_index}}" bindchange="changeTitle">{{titleType[title_index]}}</picker>
+</div>
+<div class="cell">
+    <p class="title">单元格大小</p>
+    <slider min="20" max="50" step="1" value="{{cs}}" block-size="12" show-value="true" bindchanging='changeCellSize'></slider>
+</div>
+<div class="cell">
+    <p class="title">日期样式修改</p>
+    <switch checked="{{style.length > 0}}" bindchange='switchStyle'></switch>
+</div>
+<div class="cell">
+    <p class="title">日期背景效果</p>
+    <radio-group bindchange="changeActiveType"> 
+        <radio value="rounded" checked="true" style="margin-right: 10px;">圆形</radio>
+        <radio value="square">方形</radio>
+    </radio-group>
+</div>

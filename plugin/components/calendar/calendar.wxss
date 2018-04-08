@@ -1,0 +1,113 @@
+/* plugin/components/calendar/calendar.wxss */
+
+/*
+ * 字体
+ */
+
+
+@font-face {font-family: "cwj-icon";
+  src: url('//at.alicdn.com/t/font_601455_q8aev4obbmon7b9.eot?t=1522928336476'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_601455_q8aev4obbmon7b9.eot?t=1522928336476#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('//at.alicdn.com/t/font_601455_q8aev4obbmon7b9.ttf?t=1522928336476') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_601455_q8aev4obbmon7b9.svg?t=1522928336476#cwj-icon') format('svg'); /* iOS 4.1- */
+}
+
+.cwj-icon {
+  font-family:"cwj-icon" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cwj-calendar-icon-left:before { content: "\e697"; }
+
+.cwj-calendar-icon-up:before { content: "\e6a5"; }
+
+.cwj-calendar-icon-down:before { content: "\e6a6"; }
+
+.cwj-calendar-icon-right:before { content: "\e6a7"; }
+
+.cwj-calendar-icon-dot:before { content: "\e608"; }
+
+
+/**
+ * 日历组件
+ */
+
+.calendar {
+    display: block;
+    margin: 0rpx;
+    font-size: 28rpx;
+}
+
+/**
+ * 日历主标题
+ */
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+    margin: 0rpx 20rpx 20rpx 20rpx;
+    text-align: center;
+    font-weight: bold;
+}
+
+/**
+ * 日历周标题
+ */
+
+.calendar-weeks {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+/**
+ * 日历周标题单个项目
+ */
+
+.calendar-weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;    
+    text-align: center;
+}
+
+/**
+ * 日历日期行
+ */
+
+.calendar-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+/**
+ * 日历单个日期项
+ */
+
+.calendar-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;    
+    text-align: center;    
+}
+
+.cell-rounded {
+    border-radius: 50%;
+}
+
+.calendar-lunar-day {
+    /*font-size: smaller;*/
+    font-size: 20rpx;
+}

@@ -1,0 +1,20 @@
+.plugin {
+    padding-top: 20px;
+}
+
+
+.cell {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #888;
+}
+
+.cell .title {
+    flex-grow: 1;
+}
+
+.calendar-style {
+    margin-top: 100rpx;    
+}
+

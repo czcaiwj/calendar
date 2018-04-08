@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "calendar": "plugin://calendar/calendar"
+    },
+    "navigationBarTitleText": "Demo"
+}

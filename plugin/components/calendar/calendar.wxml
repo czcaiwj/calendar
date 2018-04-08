@@ -1,0 +1,64 @@
+<view class="calendar calendar-style">
+    <!--主标题-->
+    <view class="calendar-header header-style" wx:if="{{header}}">
+        <text wx:if="{{year == min_year && month == min_month}}"></text>
+        <text class="cwj-icon cwj-calendar-icon-left" bindtap="prevMonth" wx:elif="{{prev}}"></text>
+        <text wx:else></text>
+        
+        <picker mode="date" value="{{year}}-{{month}}" start="{{startDate}}" end="{{endDate}}" bindchange="dateChange" fields="month">
+            <text>{{year}}年{{month}}月</text>
+        </picker>
+        
+        <text wx:if="{{year == max_year && month == max_month}}"></text>
+        <text class="cwj-icon cwj-calendar-icon-right" bindtap="nextMonth" wx:elif="{{next}}"></text>
+        <text wx:else></text>
+    </view>
+
+    <!--日历面板-->
+    <view class="calendar-board board-style">
+        <!--周标题-->
+        <view class="calendar-weeks" wx:if="{{weeks && weekTitle.length == 7}}">
+            <text class="calendar-weekday" wx:for="{{weekTitle}}" wx:key="">{{item}}</text>
+        </view>
+
+        <!--日期-->
+        <view class="calendar-days">
+            <block wx:for="{{days_array}}" wx:for-item="item" wx:key="" wx:for-index="i">
+                <!--日期行-->
+                <view class="calendar-row">
+                    <block wx:for="{{days_array[i]}}" wx:for-item="day" wx:key="">
+                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:if="{{day.day <= 0}}"></view>
+                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:elif="{{activeType == 'square'}}" bindtap="clickDay" data-day="{{day}}">
+                            <block wx:if="{{day.info == 'prev'}}">
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>
+                            <block wx:elif="{{day.info == 'next'}}">
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>
+                            <block wx:else>
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>                            
+                        </view>
+                        <view class="calendar-cell cell-rounded" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:else bindtap="clickDay" data-day="{{day}}">
+                            <block wx:if="{{day.info == 'prev'}}">
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>
+                            <block wx:elif="{{day.info == 'next'}}">
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>
+                            <block wx:else>
+                                <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
+                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                            </block>                            
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

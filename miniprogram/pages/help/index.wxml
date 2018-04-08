@@ -1,0 +1,144 @@
+<div class="container">    
+    <p class="name"><strong>calendar</strong></p>
+    <p class="subname">日历</p>
+    <table class="table">
+        <tr>
+            <td>属性名</td>
+            <td>类型</td>
+            <td>默认值</td>
+            <td>说明</td>
+        </tr>
+        <tr>
+            <td>year</td>
+            <td>Number</td>
+            <td>当前年份</td>
+            <td>当前公历年份</td>
+        </tr>
+        <tr>
+            <td>month</td>
+            <td>Number</td>
+            <td>当前月份</td>
+            <td>当前公历月份</td>
+        </tr>
+        <tr>
+            <td>day</td>
+            <td>Number</td>
+            <td>当前日期</td>
+            <td>当前公历日期</td>
+        </tr>
+        <tr>
+            <td>start-date</td>
+            <td>String</td>
+            <td>日历的起始年月</td>
+            <td>格式为YYYY-MM</td>
+        </tr>
+        <tr>
+            <td>end-date</td>
+            <td>String</td>
+            <td>日历的结束年月</td>
+            <td>格式为YYYY-MM</td>
+        </tr>
+        <tr>
+            <td>header</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否显示标题</td>
+        </tr>
+        <tr>
+            <td>next</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否显示下个月按钮</td>
+        </tr>
+        <tr>
+            <td>prev</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否显示上个月按钮</td>
+        </tr>
+        <tr>
+            <td>show-more-days</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>是否显示非当前月的日期</td>
+        </tr>
+        <tr>
+            <td>weeks</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否显示周标题</td>
+        </tr>
+        <tr>
+            <td>weeks-type</td>
+            <td>String</td>
+            <td>en</td>
+            <td>周标题类型</td>
+        </tr>
+        <tr>
+            <td>days-color</td>
+            <td>Array</td>
+            <td>[]</td>
+            <td>设置各日期字体颜色、背景颜色</td>
+        </tr>
+        <tr>
+            <td>cell-size</td>
+            <td>Number</td>
+            <td>30</td>
+            <td>日期单元格大小</td>
+        </tr>
+        <tr>
+            <td>active-type</td>
+            <td>String</td>
+            <td>rounded</td>
+            <td>设置日期背景形状</td>
+        </tr>
+        <tr>
+            <td>lunar</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>是否显示农历</td>
+        </tr>
+    </table>
+    <ol class="memo">
+        <li>注1：日历的起始年月最小为1900-01</li>
+        <li>注2：日历的结束年月最大为2099-12</li>
+    </ol>
+
+    <p class="name"><strong>weeks-type有效值</strong></p>
+    <table class="table">
+        <tr>
+            <td>值</td>
+            <td>说明</td>            
+        </tr>
+        <tr>
+            <td>en</td>
+            <td>显示为：S, M, T, W, T, F, S</td>
+        </tr>
+        <tr>
+            <td>full-en</td>
+            <td>显示为：Sun, Mon, Tue, Wed, Thu, Fri, Sat</td>
+        </tr>
+        <tr>
+            <td>cn</td>
+            <td>显示为：日, 一, 二, 三, 四, 五, 六</td>
+        </tr>
+    </table>
+
+    <p class="name"><strong>active-type有效值</strong></p>
+    <table class="table">
+        <tr>
+            <td>值</td>
+            <td>说明</td>            
+        </tr>
+        <tr>
+            <td>rounded</td>
+            <td>显示为圆形背景</td>
+        </tr>
+        <tr>
+            <td>square</td>
+            <td>显示为方形背景</td>
+        </tr>        
+    </table>
+    
+    <image src="/resource/demo.png" style="width: {{width}}px; height: {{height}}px;"></image>
+</div>

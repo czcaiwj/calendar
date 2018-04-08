@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <p class="title">Demo1</p>
+    <div class="calendar-box">
+        <div class="left">
+            <div class="today">
+                <p>{{day}}</p>
+                <p class="monthStr">{{str}}</p>
+            </div>            
+        </div>
+        <div class="right">
+            <calendar header="{{false}}" cell-size="20" days-color="{{demo1_days_style}}" active-type="square" />
+        </div>
+    </div>
+    <p class="title">Demo2</p>
+    <div class="demo2">
+        <calendar cell-size="30" days-color="{{demo2_days_style}}" header-style="demo2-header" board-style="demo2-board" weeks-type="full-en" />
+    </div>    
+</div>

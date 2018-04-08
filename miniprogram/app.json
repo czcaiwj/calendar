@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/help/index",
+        "pages/demo/index"
+    ],
+    "window": {
+        "navigationBarTitleText": "日历组件演示"
+    },
+    "tabBar": {
+        "color": "#dbdbdb",
+        "selectedColor": "#6665ff",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "功能演示",
+                "iconPath": "/resource/index2.png",
+                "selectedIconPath": "/resource/index.png"
+            },
+            {
+                "pagePath": "pages/help/index",
+                "text": "接口文档",
+                "iconPath": "/resource/interface2.png",
+                "selectedIconPath": "/resource/interface.png"
+            },
+            {
+                "pagePath": "pages/demo/index",
+                "text": "Demo",
+                "iconPath": "/resource/layers2.png",
+                "selectedIconPath": "/resource/layers.png"
+            }
+        ]
+    },
+    "plugins": {
+        "calendar": {
+            "version": "dev",
+            "provider": "wx92c68dae5a8bb046"
+        }
+    }
+}

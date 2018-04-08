@@ -1,0 +1,23 @@
+/* pages/help/index.wxss */
+
+.name {
+    margin-top:10px;
+}
+
+.subname {
+    margin-top:10px;
+}
+
+.table {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.memo {
+    margin: 10px 0px;
+    font-size: 12px;    
+}
+
+li {
+    list-style-position: inside;
+}
