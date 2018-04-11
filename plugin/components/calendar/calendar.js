@@ -625,15 +625,18 @@ Component({
         /**
          * 点击具体日期
          */
-        clickDay: function (event) {
+        dayClick: function (event) {        
+            const click_day = event.currentTarget.dataset.day;
             const eventDetail = {
                 year: this.data.year,
-                month: this.data.month,
-                day: event.day.day,
-                lunarMonth: event.day.lunarMonth,
-                lunarDay: event.day.lunarDay
+                month: click_day.month,
+                day: click_day.day,
+                color: click_day.color,
+                lunarMonth: click_day.lunarMonth,
+                lunarDay: click_day.lunarDay,
+                background: click_day.background
             };
-            console.log(event.currentTarget.dataset);
+            this.triggerEvent('dayClick', eventDetail);            
         }
     },
 

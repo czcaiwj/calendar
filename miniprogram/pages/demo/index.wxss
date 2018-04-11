@@ -49,12 +49,13 @@
     margin-top: 20px;
     text-align: center;
     margin-bottom: 10px;
+    display: block;
 }
 
 .demo2 {
     background-image: linear-gradient(to bottom, #2e5d91 0%, #2f3e79 100%);
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 10px;    
 }
 
 .demo2-header {
@@ -65,4 +66,21 @@
 
 .demo2-board {
     color: #3ed7f6;
+}
+
+
+.demo3 {
+    background-color: #eeedff;
+    padding-top: 10px;
+}
+
+.demo3-header {
+    font-size: large;
+    color: #605eac;
+}
+
+
+.demo3-board {
+    background-color: #dddcff;
+    color: white;
 }

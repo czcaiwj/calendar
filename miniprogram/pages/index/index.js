@@ -193,6 +193,7 @@ Page({
      * 点击上个月
      */
     prevMonth: function (event) {        
+        console.log(event);
         const currentYear = event.detail.currentYear;
         const currentMonth = event.detail.currentMonth;
         const prevMonth = event.detail.prevMonth;
@@ -215,5 +216,20 @@ Page({
             title: '日期选择器事件',
             content: '当前年份：' + currentYear + '年\n当前月份：' + currentMonth + '月\n之前年份：' + prevYear + '年\n之前月份：' + prevMonth + '月'
         });
+    },
+
+    dayClick: function (event) {
+        const year = event.detail.year;
+        const month = event.detail.month;
+        const day = event.detail.day;
+        const color = event.detail.color;
+        const lunarMonth = event.detail.lunarMonth;
+        const lunarDay = event.detail.lunarDay;
+        const background = event.detail.background;        
+        wx.showModal({
+            title: '日期点击事件',
+            content: '点击的日期为：' + year + '年' + month + '月' + day + '日\n农历：' + lunarMonth + lunarDay
+        });
     }
+    
 })

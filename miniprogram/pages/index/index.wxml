@@ -38,7 +38,8 @@ actives:[激活的日期]
     
     bindnextMonth='nextMonth'                
     bindprevMonth='prevMonth'
-    binddateChange='dateChange' />
+    binddateChange='dateChange'
+    binddayClick='dayClick' />
 </div>
 <div class="cell" style="margin-top: 30px;">
     <p class="title">显示日历标题</p>

@@ -10,7 +10,7 @@ Page({
     data: {
         year: new Date().getFullYear(),      // 年份
         month: new Date().getMonth() + 1,    // 月份
-        day: new Date().getDate(),           // 日期  
+        day: new Date().getDate(),
         str: MONTHS[new Date().getMonth()],  // 月份字符串
 
         demo1_days_style: [],
@@ -24,7 +24,7 @@ Page({
         const days_count = new Date(this.data.year, this.data.month, 0).getDate();
         let demo1_days_style = new Array;
         for (let i = 1; i <= days_count; i++) {
-            if (i % (parseInt(Math.random() * 10) + 1) > 1) {
+            if (i <= 9 && i != 7) {
                 demo1_days_style.push({
                     month: 'current', day: i, color: 'white', background: '#8497ee'
                 });

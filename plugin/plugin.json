@@ -1,6 +1,5 @@
 {
   "publicComponents": {
     "calendar": "components/calendar/calendar"
-  },
-  "main": "index.js"
+  }  
 }
