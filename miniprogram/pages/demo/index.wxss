@@ -84,3 +84,18 @@
     background-color: #dddcff;
     color: white;
 }
+
+
+.demo4-calendar {
+    background-color: #413a60;
+    padding-top: 10px;
+}
+
+.demo4-header {
+    font-size: large;
+    color: white;
+}
+
+.demo4-board {
+    color: white;
+}

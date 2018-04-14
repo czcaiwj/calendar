@@ -1,34 +1,32 @@
-const plugin = requirePlugin("calendar");
-
 Page({
 
     data: {
         year: new Date().getFullYear(),      // 年份
         month: new Date().getMonth() + 1,    // 月份
         day: new Date().getDate(),           // 日期
-                        
+
         header: true,                        // 日历标题
         lunar: true,                         // 显示农历
         more: true,                          // 显示非当前月日期                
         week_title: true,                    // 显示周标题
         next: true,                          // 显示下个月
         prev: true,                          // 显示上个月
-        
+
         cs: 30,                              // 单元格大小
         title_type: 'en',                    // 周标题类型
         titleType: ['英文单字母', '英语简写', '中文简写'],
         title_index: 0,
 
-        style: [],        
+        style: [],
         activeType: 'rounded', // 日期背景效果
     },
 
-    onLoad: function () {            
-        
+    onLoad: function () {
+
     },
 
     addYear: function () {
-        this.setData({ 
+        this.setData({
             year: this.data.year + 1
         });
     },
@@ -82,14 +80,14 @@ Page({
         if (this.data.lunar) {
             this.setData({
                 lunar: !this.data.lunar,
-                cs: 30               
-            });            
+                cs: 30
+            });
         } else {
             this.setData({
                 lunar: !this.data.lunar,
                 cs: 50
-            }); 
-        }  
+            });
+        }
     },
 
     switchNext: function () {
@@ -112,8 +110,8 @@ Page({
             });
         } else {
             this.setData({
-                style: [    
-                    { month: 'current', day: 3, color: 'white', background: '#58cc69' },                
+                style: [
+                    { month: 'current', day: 3, color: 'white', background: '#58cc69' },
                     { month: 'current', day: 12, color: 'white', background: '#728eff' },
                     { month: 'current', day: 13, color: 'white', background: '#728eff' },
                     { month: 'current', day: 14, color: 'white', background: '#728eff' },
@@ -126,8 +124,8 @@ Page({
         }
     },
 
-    changeTitle: function (event) {        
-        const index = event.detail.value;        
+    changeTitle: function (event) {
+        const index = event.detail.value;
         switch (index) {
             case '0':
                 this.setData({
@@ -154,7 +152,7 @@ Page({
                 });
                 break;
         }
-        
+
     },
 
     switchTitle: function () {
@@ -163,7 +161,7 @@ Page({
         });
     },
 
-    changeCellSize:function (event) {        
+    changeCellSize: function (event) {
         this.setData({
             cs: event.detail.value
         });
@@ -192,7 +190,7 @@ Page({
     /**
      * 点击上个月
      */
-    prevMonth: function (event) {        
+    prevMonth: function (event) {
         console.log(event);
         const currentYear = event.detail.currentYear;
         const currentMonth = event.detail.currentMonth;
@@ -225,11 +223,11 @@ Page({
         const color = event.detail.color;
         const lunarMonth = event.detail.lunarMonth;
         const lunarDay = event.detail.lunarDay;
-        const background = event.detail.background;        
+        const background = event.detail.background;
         wx.showModal({
             title: '日期点击事件',
             content: '点击的日期为：' + year + '年' + month + '月' + day + '日\n农历：' + lunarMonth + lunarDay
         });
     }
-    
+
 })

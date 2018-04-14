@@ -1,5 +1,4 @@
 // pages/demo/index.js
-const plugin = requirePlugin("calendar");
 const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
 Page({
@@ -14,7 +13,8 @@ Page({
         str: MONTHS[new Date().getMonth()],  // 月份字符串
 
         demo1_days_style: [],
-        demo2_days_style: []
+        demo2_days_style: [],
+        demo4_days_style: []
     },
 
     /**
@@ -32,7 +32,7 @@ Page({
                 demo1_days_style.push({
                     month: 'current', day: i, color: 'white'
                 });
-            }            
+            }
         }
         this.setData({
             demo1_days_style
@@ -61,5 +61,33 @@ Page({
         this.setData({
             demo2_days_style
         });
-    },    
+
+        let demo4_days_style = new Array;
+        for (let i = 1; i <= days_count; i++) {
+            if (i == 3) {
+                demo4_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#46c4f3'
+                });
+            } else if (i == 7) {
+                demo4_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#ffb72b'
+                });
+            } else if (i == 12 || i == 23 || i == 24) {
+                demo4_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#865fc1'
+                });
+            } else if (i == 21 || i == 22) {
+                demo4_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#eb4986'
+                });
+            } else {
+                demo4_days_style.push({
+                    month: 'current', day: i, color: 'white'
+                });
+            }
+        }
+        this.setData({
+            demo4_days_style
+        });
+    },
 })

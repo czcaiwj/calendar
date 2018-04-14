@@ -107,7 +107,6 @@
     border-radius: 50%;
 }
 
-.calendar-lunar-day {
-    /*font-size: smaller;*/
+.calendar-lunar-day {    
     font-size: 20rpx;
 }

@@ -8,7 +8,7 @@
             </view>            
         </view>
         <view class="right">
-            <calendar header="{{false}}" cell-size="20" days-color="{{demo1_days_style}}" active-type="square" />
+            <calendar header="{{false}}" cell-size="40" days-color="{{demo1_days_style}}" active-type="square" />
         </view>
     </view>
     <text class="title">Demo2</text>
@@ -18,5 +18,17 @@
     <text class="title">Demo3</text>
     <view class="demo3">
         <calendar cell-size="30" header-style="demo3-header" board-style="demo3-board" weeks-type="cn" />
+    </view>
+    <text class="title">Demo4</text>
+    <view class="demo4">
+        <calendar 
+        weeks-type="cn" 
+        cell-size="30" 
+        next="{{false}}" prev="{{false}}" show-more-days="{{true}}"
+        calendar-style="demo4-calendar" 
+        header-style="demo4-header" 
+        board-style="demo4-board" 
+        days-color="{{demo4_days_style}}" 
+        />
     </view>
 </view>
