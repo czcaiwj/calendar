@@ -31,4 +31,27 @@
         days-color="{{demo4_days_style}}" 
         />
     </view>
+    <text class="title">Demo5</text>
+    <view class="demo5">
+        <calendar        
+        cell-size="30" 
+        next="{{false}}" prev="{{false}}" show-more-days="{{true}}"
+        calendar-style="demo5-calendar" 
+        header-style="demo5-header" 
+        board-style="demo5-board" 
+        days-color="{{demo5_days_style}}" 
+        />
+    </view>
+    <text class="title">Demo6</text>
+    <view class="demo6">
+        <calendar       
+        weeks-type="full-en"  
+        cell-size="30" 
+        next="{{false}}" prev="{{false}}" show-more-days="{{true}}"
+        calendar-style="demo6-calendar" 
+        header-style="demo6-header" 
+        board-style="demo6-board" 
+        days-color="{{demo6_days_style}}" 
+        />
+    </view>
 </view>

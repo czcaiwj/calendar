@@ -14,7 +14,9 @@ Page({
 
         demo1_days_style: [],
         demo2_days_style: [],
-        demo4_days_style: []
+        demo4_days_style: [],
+        demo5_days_style: [],
+        demo6_days_style: [],
     },
 
     /**
@@ -88,6 +90,70 @@ Page({
         }
         this.setData({
             demo4_days_style
+        });
+
+        let demo5_days_style = new Array;
+        for (let i = 1; i <= days_count; i++) {
+            const date = new Date(this.data.year, this.data.month - 1, i);
+            if (date.getDay() == 0) {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: '#f488cd'
+                });
+            } else if (i == 12) {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#b49eeb'
+                });
+            } else if (i == 17) {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#f5a8f0'
+                });
+            } else if (i == 21) {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#aad4f5'
+                });
+            } else if (i == 25) {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#84e7d0'
+                });
+            } else {
+                demo5_days_style.push({
+                    month: 'current', day: i, color: '#a18ada'
+                });
+            }
+        }
+
+        this.setData({
+            demo5_days_style
+        });
+
+        let demo6_days_style = new Array;
+        for (let i = 1; i <= days_count; i++) {
+            const date = new Date(this.data.year, this.data.month - 1, i);
+            if (i == 12) {
+                demo6_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#b49eeb'
+                });
+            } else if (i == 17) {
+                demo6_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#f5a8f0'
+                });
+            } else if (i == 21) {
+                demo6_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#aad4f5'
+                });
+            } else if (i == 25) {
+                demo6_days_style.push({
+                    month: 'current', day: i, color: 'white', background: '#84e7d0'
+                });
+            } else {
+                demo6_days_style.push({
+                    month: 'current', day: i, color: 'black'
+                });
+            }
+        }
+
+        this.setData({
+            demo6_days_style
         });
     },
 })
