@@ -18,7 +18,7 @@ v1.1.0 修复日期点击bug
 
 3、[日历事件用法](https://github.com/czcaiwj/calendar/wiki/%E6%97%A5%E5%8E%86%E4%BA%8B%E4%BB%B6%E7%94%A8%E6%B3%95)
 
-4、[自定义日历样式](https://github.com/czcaiwj/calendar/wiki/%E6%9B%B4%E6%94%B9%E6%8F%92%E4%BB%B6%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F)
+4、[自定义日历样式](https://github.com/czcaiwj/calendar/wiki/自定义日历样式)
 
 ## 插件使用效果演示
 
