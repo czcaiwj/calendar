@@ -4,9 +4,11 @@
         "pages/help/index",
         "pages/demo/index"
     ],
+    
     "window": {
         "navigationBarTitleText": "日历组件演示"
     },
+
     "tabBar": {
         "color": "#dbdbdb",
         "selectedColor": "#6665ff",
@@ -32,7 +34,8 @@
             }
         ]
     },
-    "plugins": {
+
+    "plugins": {        
         "calendar": {
             "version": "dev",
             "provider": "wx92c68dae5a8bb046"

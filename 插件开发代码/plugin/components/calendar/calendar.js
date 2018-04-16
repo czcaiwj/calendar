@@ -28,7 +28,7 @@
  * board-style 面板样式
  */
 
-const lunar = require('../../utils/lunar.js');
+const lunar = require('./lunar.js');
 const minYear = 1900;
 const maxYear = 2099;
 
@@ -133,7 +133,7 @@ Component({
             value: 'en',
             observer: '_weeksTypeChange'
         },
-        
+
         /**
          * 设置日期字体、背景颜色
          */
@@ -160,7 +160,7 @@ Component({
             value: 'rounded',
             observer: '_setActiveType'
         },
-        
+
         /**
          * 是否显示农历
          */
@@ -216,8 +216,8 @@ Component({
          * 检查日期是否输入正确
          * @param day int 日期
          */
-        _checkDay: function(day) {
-            if(day < 1) {
+        _checkDay: function (day) {
+            if (day < 1) {
                 throw new RangeError('日期不能小于1');
             } else if (day > 31) {
                 throw new RangeError('日期不能大于31');
@@ -234,7 +234,7 @@ Component({
                     year: newYear,
                     days_array: this._setCalendarData(newYear, this.data.month)
                 });
-            }            
+            }
         },
 
         /**
@@ -246,7 +246,7 @@ Component({
                     month: newMonth,
                     days_array: this._setCalendarData(this.data.year, newMonth)
                 });
-            }        
+            }
         },
 
         /**
@@ -257,7 +257,7 @@ Component({
                 this.setData({
                     day: newDay
                 });
-            }            
+            }
         },
 
         /**
@@ -305,7 +305,7 @@ Component({
         /**
          * 是否显示标题
          */
-        _headerChange: function (newHeader, oldHeader) {            
+        _headerChange: function (newHeader, oldHeader) {
             this.setData({
                 header: !!newHeader
             });
@@ -314,7 +314,7 @@ Component({
         /**
          * 是否显示额外的月份日期
          */
-        _moreChange: function (newMore, oldMore) {            
+        _moreChange: function (newMore, oldMore) {
             this.setData({
                 showMoreDays: !!newMore,
                 days_array: this._setCalendarData(this.data.year, this.data.month)
@@ -343,7 +343,7 @@ Component({
                         weeksType: 'full-en',
                         weekTitle: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
                     });
-                    break;                
+                    break;
                 default:
                     this.setData({
                         weeksType: 'en',
@@ -361,7 +361,7 @@ Component({
                 weeks: !!newVal,
             });
         },
-        
+
         /**
          * 设置单元格宽度
          */
@@ -369,7 +369,7 @@ Component({
             this.setData({
                 cellSize: newSize
             });
-        }, 
+        },
 
         /**
          * 是否显示农历
@@ -383,13 +383,13 @@ Component({
         /**
          * 设置日期单元格字体颜色、背景
          */
-        _setDaysColor: function (newDaysColor, oldDaysColor) {            
+        _setDaysColor: function (newDaysColor, oldDaysColor) {
             this.setData({
                 days_color: newDaysColor
             }, function () {
                 this.setData({
                     days_array: this._setCalendarData(this.data.year, this.data.month)
-                });                
+                });
             });
         },
 
@@ -404,7 +404,7 @@ Component({
                         activeType: newType
                     });
                     break;
-                default: 
+                default:
                     this.setData({
                         activeType: 'rounded'
                     });
@@ -527,7 +527,7 @@ Component({
                         days[i]['lunarDay'] = lunarDate.monthStr;
                     }
                 }
-            }            
+            }
 
             let days_array = new Array;
             let week = new Array;
@@ -548,7 +548,7 @@ Component({
         /**
          * 点击下个月
          */
-        nextMonth: function () {            
+        nextMonth: function () {
             const eventDetail = {
                 prevYear: this.data.year,
                 prevMonth: this.data.month
@@ -575,7 +575,7 @@ Component({
         /**
          * 点击上个月
          */
-        prevMonth: function () {            
+        prevMonth: function () {
             const eventDetail = {
                 prevYear: this.data.year,
                 prevMonth: this.data.month
@@ -602,7 +602,7 @@ Component({
         /**
          * 日期选择器变化
          */
-        dateChange: function (event) {            
+        dateChange: function (event) {
             const eventDetail = {
                 prevYear: this.data.year,
                 prevMonth: this.data.month
@@ -625,7 +625,7 @@ Component({
         /**
          * 点击具体日期
          */
-        dayClick: function (event) {        
+        dayClick: function (event) {
             const click_day = event.currentTarget.dataset.day;
             const eventDetail = {
                 year: this.data.year,
@@ -636,14 +636,14 @@ Component({
                 lunarDay: click_day.lunarDay,
                 background: click_day.background
             };
-            this.triggerEvent('dayClick', eventDetail);            
+            this.triggerEvent('dayClick', eventDetail);
         }
     },
 
-    created: function () {        
+    created: function () {
     },
 
-    attached: function () {        
+    attached: function () {
         const year = this.data.year;
         const month = this.data.month;
         this.setData({
@@ -651,7 +651,7 @@ Component({
         });
     },
 
-    ready: function () {        
+    ready: function () {
     },
 
     externalClasses: [

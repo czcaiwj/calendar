@@ -1,0 +1,146 @@
+page {
+    background-color: #efefef;
+}
+
+
+.calendar-box {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-image: linear-gradient(to bottom, #6295eb 0%, #586fc2 50%, #5052a4 100%);
+    box-shadow: 0px 11px 2px 1px rgba(234, 234, 229, 0.3);
+}
+
+.calendar-box .left {
+    width: 30%;
+    text-align: center;
+}
+
+.calendar-box .left .today {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;    
+    background-color: #ef7a82;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.calendar-box .left .today p {
+    font-size: 2rem;    
+}
+
+.calendar-box .left .today .monthStr {
+    font-size: 0.8rem;
+}
+
+.calendar-box .right {
+    width: 70%;
+    font-size: 12px;
+}
+
+.calendar-box .right .box {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.demo2 {
+    background-image: linear-gradient(to bottom, #2e5d91 0%, #2f3e79 100%);
+    padding-top: 10px;
+    padding-bottom: 10px;    
+}
+
+.demo2-header {
+    font-size: large;
+    color: #3ed7f6;
+}
+
+
+.demo2-board {
+    color: #3ed7f6;
+}
+
+
+.demo3 {
+    background-color: #eeedff;
+    padding-top: 10px;
+}
+
+.demo3-header {
+    font-size: large;
+    color: #605eac;
+}
+
+
+.demo3-board {
+    background-color: #dddcff;
+    color: white;
+}
+
+
+.demo4-calendar {
+    background-color: #413a60;
+    padding-top: 10px;
+}
+
+.demo4-header {
+    font-size: large;
+    color: white;
+}
+
+.demo4-board {
+    color: white;
+}
+
+.demo5 {
+    padding: 15px;
+}
+
+.demo5-calendar {
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 15px;
+}
+
+.demo5-header {
+    font-size: large;
+    color: #59518d;    
+}
+
+.demo5-board {
+    color: #c7cbe2;
+    font-weight: bold;
+}
+
+.demo6 {
+    padding: 15px;
+}
+
+.demo6-calendar {
+    background-color: #fff043;
+    padding-top: 10px;    
+    box-shadow: 5px 5px 2px 1px rgba(255, 240, 67, 0.5);
+}
+
+.demo6-header {
+    font-size: large;
+    color: black;    
+}
+
+.demo6-board {
+    color: #ff8a43;
+    font-weight: bold;
+}
