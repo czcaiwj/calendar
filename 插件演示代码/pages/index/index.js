@@ -99,28 +99,16 @@ Page({
                 demo5_days_style.push({
                     month: 'current', day: i, color: '#f488cd'
                 });
-            } else if (i == 12) {
-                demo5_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#b49eeb'
-                });
-            } else if (i == 17) {
-                demo5_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#f5a8f0'
-                });
-            } else if (i == 21) {
-                demo5_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#aad4f5'
-                });
-            } else if (i == 25) {
-                demo5_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#84e7d0'
-                });
             } else {
                 demo5_days_style.push({
                     month: 'current', day: i, color: '#a18ada'
                 });
             }
         }
+        demo5_days_style.push({ month: 'current', day: 12, color: 'white', background: '#b49eeb' });
+        demo5_days_style.push({ month: 'current', day: 17, color: 'white', background: '#f5a8f0' });
+        demo5_days_style.push({ month: 'current', day: 20, color: 'white', background: '#aad4f5' });
+        demo5_days_style.push({ month: 'current', day: 25, color: 'white', background: '#84e7d0' });
 
         this.setData({
             demo5_days_style
