@@ -290,7 +290,7 @@ Component({
                 const month = parseInt(newDate.split('-')[1]);
                 if (!isNaN(year) && year <= 2099 && !isNaN(month) && month >= 1 && month <= 12) {
                     this.setData({
-                        startDate: newDate,
+                        endDate: newDate,
                         max_year: year,
                         max_month: month
                     });
