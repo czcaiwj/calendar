@@ -420,7 +420,7 @@ Component({
             const empty_days_count = new Date(year, month - 1, 1).getDay(); // 本月第一天是周几，0是星期日，6是星期六
             let empty_days = new Array;
             const prev_month = month - 1 == 0 ? 12 : month - 1;             // 上个月的月份数
-
+            const prev_year = month - 1 == 0 ? this.data.year - 1 : this.data.year;
             /**
              * 上个月的日期
              */
@@ -429,6 +429,7 @@ Component({
                     state: 'inactive',
                     day: -1,
                     month: prev_month,
+                    year: prev_year,
                     info: 'prev',
                     color: '#c3c6d1',
                     background: 'transparent'
@@ -442,12 +443,14 @@ Component({
             const days_count = last_day.getDate();              // 本月最后一天是几号
             const last_date = last_day.getDay();                // 本月最后一天是星期几
             const next_month = month + 1 == 13 ? 1 : month + 1; // 下个月的月份数
+            const next_year = month + 1 == 13 ? this.data.year + 1 : this.data.year;
             let empty_days_last = new Array;
             for (let i = 0; i < 6 - last_date; i++) {
                 empty_days_last.push({
                     state: 'inactive',
                     day: -2,
                     month: next_month,
+                    year: next_year,
                     info: 'next',
                     color: '#c3c6d1',
                     background: 'transparent'
@@ -463,14 +466,14 @@ Component({
                     state: 'inactive',
                     day: i,
                     month: month,
+                    year: year,
                     info: 'current',
                     color: '#4a4f74',
                     background: 'transparent'
                 });
             }
             const days_range = temp;                                   // 本月
-            let days = empty_days.concat(days_range, empty_days_last); // 上个月 + 本月 + 下个月
-
+            let days = empty_days.concat(days_range, empty_days_last); // 上个月 + 本月 + 下个月            
             // 如果要显示前后月份的日期
             if (this.data.showMoreDays) {
                 // 显示下月的日期
@@ -490,7 +493,7 @@ Component({
                     for (let i = 0; i <= index; i++) {
                         days[i].day = last_month_day - index + i;
                     }
-                }
+                }                
             }
 
             /**
@@ -541,8 +544,8 @@ Component({
 
             if (week.length > 0) {
                 days_array.push(week);
-            }
-            return days_array;
+            }            
+            return days_array;            
         },
 
         /**
@@ -625,10 +628,10 @@ Component({
         /**
          * 点击具体日期
          */
-        dayClick: function (event) {
+        dayClick: function (event) {                
             const click_day = event.currentTarget.dataset.day;
-            const eventDetail = {
-                year: this.data.year,
+            const eventDetail = {                
+                year: click_day.year,
                 month: click_day.month,
                 day: click_day.day,
                 color: click_day.color,

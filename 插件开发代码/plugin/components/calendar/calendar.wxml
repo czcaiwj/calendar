@@ -27,8 +27,8 @@
                 <!--日期行-->
                 <view class="calendar-row">
                     <block wx:for="{{days_array[i]}}" wx:for-item="day" wx:key="">
-                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}rpx; height: {{cellSize}}rpx;" wx:if="{{day.day <= 0}}"></view>
-                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}rpx; height: {{cellSize}}rpx;" wx:elif="{{activeType == 'square'}}" bindtap="dayClick" data-day="{{day}}">
+                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:if="{{day.day <= 0}}"></view>
+                        <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:elif="{{activeType == 'square'}}" bindtap="dayClick" data-day="{{day}}">
                             <block wx:if="{{day.info == 'prev'}}">
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
                                 <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>

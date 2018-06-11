@@ -242,7 +242,7 @@ function solarToLunar(year, month, day) {
             } else {
                 isLeapMonth = true;
                 --i;
-                --monCyl;
+                --monCycle;
             }
         }
 
