@@ -35,6 +35,8 @@ actives:[激活的日期]
     days-color="{{style}}"
     active-type="{{activeType}}"
     next-month='hi'
+
+	bottom='{{bottom}}'
     
     bindnextMonth='nextMonth'                
     bindprevMonth='prevMonth'
@@ -83,4 +85,8 @@ actives:[激活的日期]
         <radio value="rounded" checked="true" style="margin-right: 10px;">圆形</radio>
         <radio value="square">方形</radio>
     </radio-group>
+</div>
+<div class="cell">
+    <p class="title">显示底部文字</p>
+    <switch checked="{{bottom}}" bindchange='switchBottom'></switch>
 </div>
