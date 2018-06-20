@@ -16,7 +16,7 @@
  * 12、cellSize: 单元格大小 整型
  * 13、daysColor：设置日期字体、背景颜色
  * 14、activeType: 日期背景效果（正方形、圆形）[rounded, square]
- * 
+ * 15、bottom: 是否显示日期底部文字
  * 事件方法：
  * 1、nextMonth：点击下个月
  * 2、prevMonth：点击上个月
@@ -168,7 +168,16 @@ Component({
             type: Boolean,
             value: false,
             observer: '_showLunar'
-        }
+        },
+
+        /**
+         * 是否显示日期底部文字
+         */
+		bottom: {
+			type: Boolean,
+			value: false,
+			observer: '_showBottom'
+		}
     },
 
     /**
@@ -378,12 +387,22 @@ Component({
             this.setData({
                 lunar: !!newConfig
             });
-        },
+		},
+
+        /**
+         * 是否显示底部
+         */
+		_showBottom: function (newConfig, oldConfig) {
+			this.setData({
+				bottom: !!newConfig
+			});
+		},
 
         /**
          * 设置日期单元格字体颜色、背景
          */
         _setDaysColor: function (newDaysColor, oldDaysColor) {
+			console.log(newDaysColor);
             this.setData({
                 days_color: newDaysColor
             }, function () {
@@ -509,7 +528,12 @@ Component({
                         }
                         if (item.background) {
                             days[j].background = item.background + '!important';
-                        }
+						}
+						['bottomText', 'bottomColor', 'fontSize'].forEach((attr) => {
+							if (item[attr]) {
+								days[j][attr] = item[attr];
+							}
+						});
                     }
                 }
             }

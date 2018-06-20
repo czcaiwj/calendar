@@ -19,6 +19,8 @@ Page({
 
         style: [],
         activeType: 'rounded', // 日期背景效果
+
+		bottom:false,//底部文字显示与隐藏
     },
 
     onLoad: function () {
@@ -111,11 +113,11 @@ Page({
         } else {
             this.setData({
                 style: [
-                    { month: 'current', day: 3, color: 'white', background: '#58cc69' },
-                    { month: 'current', day: 12, color: 'white', background: '#728eff' },
-                    { month: 'current', day: 13, color: 'white', background: '#728eff' },
-                    { month: 'current', day: 14, color: 'white', background: '#728eff' },
-                    { month: 'current', day: 15, color: 'white', background: '#728eff' },
+					{ month: 'current', day: 3, color: 'white', background: '#58cc69', bottomText: '售罄', fontSize: '20rpx' },
+					{ month: 'current', day: 12, color: 'white', background: '#728eff' },
+					{ month: 'current', day: 13, color: 'white', background: '#728eff' },
+					{ month: 'current', day: 14, color: 'white', background: '#728eff', bottomText: '已签到', fontSize:'20rpx' },
+					{ month: 'current', day: 15, color: 'white', background: '#58cc69', bottomText: '未签到', fontSize: '20rpx' },
                     { month: 'current', day: 16, color: 'white', background: '#728eff' },
                     { month: 'current', day: 26, color: 'white', background: '#ff72a6' },
                     { month: 'current', day: 27, color: 'white', background: '#ff72a6' },
@@ -123,6 +125,12 @@ Page({
             });
         }
     },
+
+	switchBottom:function(){
+		this.setData({
+			bottom: !this.data.bottom
+		});
+	},
 
     changeTitle: function (event) {
         const index = event.detail.value;

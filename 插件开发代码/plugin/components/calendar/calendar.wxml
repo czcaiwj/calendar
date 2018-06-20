@@ -54,7 +54,8 @@
                             <block wx:else>
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
                                 <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
-                            </block>                            
+                            </block>
+							<view style="color: {{day.bottomColor || day.color}};font-size: {{ day.fontSize }}" wx:if="{{bottom}}">{{day.bottomText}}</view>
                         </view>
                     </block>
                 </view>
