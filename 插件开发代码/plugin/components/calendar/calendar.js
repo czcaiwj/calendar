@@ -168,7 +168,25 @@ Component({
             type: Boolean,
             value: false,
             observer: '_showLunar'
-        }
+        },
+
+        /**
+         * 额外选项
+         */
+        addon: {
+            type: String,
+            value: 'none',
+            observer: '_setAddon'
+        },
+
+        /**
+         * 日期附加选项
+         */
+        daysAddon: {
+            type: Array,
+            value: [],
+            observer: '_setDaysAddon'
+        },
     },
 
     /**
@@ -177,11 +195,12 @@ Component({
     data: {
         days_array: [], // 日期数组
         days_color: [], // 日期字体、背景颜色数组
+        days_addon: [], // 日期附件
         weekTitle: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         max_year: 2099, // 最大年份
         max_month: 12,  // 最大月份
         min_year: 1900, // 最小年份
-        min_month: 1    // 最小月份
+        min_month: 1,   // 最小月份        
     },
 
     /**
@@ -546,6 +565,46 @@ Component({
                 days_array.push(week);
             }            
             return days_array;            
+        },
+
+        _setAddon: function (newAddon, oldAddon) {
+            if (newAddon == 'none') {
+                this.setData({
+                    lunar: false,
+                    daysAddon: [],
+                    addon: 'none'
+                });
+            } else if (newAddon == 'lunar') {
+                this.setData({
+                    lunar: true,
+                    daysAddon: [],
+                    addon: 'lunar'
+                });
+
+            } else if (newAddon == 'custom') {
+                this.setData({
+                    addon: 'custom',
+                    lunar: false,
+                });
+            } else if (newAddon == 'mixed') {
+                this.setData({
+                    addon: 'mixed',
+                    lunar: true
+                });
+            }
+        },
+
+        /**
+         * 自定义日期数组
+         */
+        _setDaysAddon: function (newAddon, oldAddon) {
+            console.log(newAddon);
+            console.log(this.data.addon);
+            if (typeof(newAddon) == 'object' && newAddon instanceof Array) {                
+                this.setData({
+                    days_addon: newAddon
+                });
+            }
         },
 
         /**

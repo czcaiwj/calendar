@@ -24,11 +24,13 @@ actives:[激活的日期]
     header="{{header}}" 
     next="{{next}}" 
     prev="{{prev}}" 
+    addon="mixed"
+    days-addon="{{days_addon}}"
     
     weeks="{{week_title}}"
     weeks-type="{{title_type}}" 
     show-more-days="{{more}}" 
-    lunar="{{lunar}}"
+    
 
     cell-size="{{cs}}"    
     

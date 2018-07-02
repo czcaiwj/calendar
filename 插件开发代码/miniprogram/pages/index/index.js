@@ -19,10 +19,25 @@ Page({
 
         style: [],
         activeType: 'rounded', // 日期背景效果
+        days_addon: []
+
     },
 
     onLoad: function () {
-
+        const today = new Date();
+        const last_date = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        const days_count = last_date.getDate();
+        let array = [];
+        for (let i = 0; i < days_count; i++) {
+            if (i % 5 == 0) {
+                array.push('测试');
+            } else {
+                array.push('');
+            }
+        }
+        this.setData({
+            days_addon: array
+        });
     },
 
     addYear: function () {

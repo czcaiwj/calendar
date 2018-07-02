@@ -31,30 +31,84 @@
                         <view class="calendar-cell" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:elif="{{activeType == 'square'}}" bindtap="dayClick" data-day="{{day}}">
                             <block wx:if="{{day.info == 'prev'}}">
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[c]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>
                             </block>
                             <block wx:elif="{{day.info == 'next'}}">
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[i]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>
                             </block>
                             <block wx:else>
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[i]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>                                
                             </block>                            
                         </view>
                         <view class="calendar-cell cell-rounded" style="background: {{day.background}}; width: {{cellSize}}px; height: {{cellSize}}px;" wx:else bindtap="dayClick" data-day="{{day}}">
                             <block wx:if="{{day.info == 'prev'}}">
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[i]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>
                             </block>
                             <block wx:elif="{{day.info == 'next'}}">
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[i]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>
                             </block>
                             <block wx:else>
                                 <text class="calendar-day" style="color: {{day.color}};">{{day.day}}</text>
-                                <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
-                            </block>                            
+                                <block wx:if="{{addon == 'lunar'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{lunar}}">{{day.lunarDay}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'custom'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};">{{days_addon[i]}}</text>
+                                </block>
+                                <block wx:elif="{{addon == 'mixed'}}">
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:if="{{days_addon[i] != ''}}">{{days_addon[i]}}</text>
+                                    <text class="calendar-lunar-day" style="color: {{day.color}};" wx:else>{{day.lunarDay}}</text>
+                                </block>                                
+                            </block>                          
                         </view>
                     </block>
                 </view>
